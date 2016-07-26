@@ -1,8 +1,8 @@
-﻿# java服务安装(一)：使用java service wrapper及maven打zip包
-
-标签（空格分隔）： java jsw maven zip
-
 ---
+layout: default
+title: 我的Blog
+---
+
 [TOC]
 
 ## 1、概述
