@@ -1,5 +1,3 @@
-#jekylll blog
+button属性修改在bootstrap.css里面
+button显示修改在-include/footer.html和base.js里面
 
-### 基于jekyll的blog
-### 使用bootstrap框架
-### font-awesome
