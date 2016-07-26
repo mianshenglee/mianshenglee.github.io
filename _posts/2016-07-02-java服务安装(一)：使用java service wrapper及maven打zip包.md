@@ -1,6 +1,7 @@
 ---
 layout: default
 title: java服务安装(一)：使用java service wrapper及maven打zip包
+category: java
 ---
 
 ## 1、概述

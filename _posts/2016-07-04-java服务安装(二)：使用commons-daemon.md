@@ -1,6 +1,7 @@
 ---
 layout: default
 title: java服务安装(二)：使用commons-daemon
+category: java
 ---
 
 ## 1、概述
