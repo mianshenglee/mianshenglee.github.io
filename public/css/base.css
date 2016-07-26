@@ -76,6 +76,10 @@ body, html {
   margin-top: 40px;
 }
 
+.aside2 .list-group-item-lay{
+  margin-left: 20px;
+}
+
 /* 右侧内容栏 */
 .aside3 {
   height: 100%;
