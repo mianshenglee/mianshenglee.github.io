@@ -197,7 +197,7 @@ esac
 
 一般还需要把程序作为系统服务开机启动，因此本示例中提供了`set_auto_start.sh`文件，注意修改相应的文件名称：
 
-```bash
+```sh
 #!/bin/bash
 
 DAEMON_HOME=$(pwd)
@@ -242,6 +242,7 @@ echo "设置${AUTO_RUN_FILE_NAME}开机启动结束"
 </execution>
 ```
 daemon-linux-zip.xml
+
 ```xml
 <assembly>
 	<id>deamon-linux</id>
