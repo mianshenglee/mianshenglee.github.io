@@ -4,12 +4,15 @@ title: java服务安装(二)：使用commons-daemon
 ---
 
 ## 1、概述
+
 ### 1.1、为什么使用commons daemon
 [上一篇][1]已对使用java service wrapper工具与java程序集成进行了讲解，java service wrapper使用简单，集成方法简单，不修改任何代码，一般情况下已满足需求。  
 
 但是，java service wrapper只对java程序的开启及关闭进行操作，  若需要对程序启动前及关闭前进行一些自定义的操作（如启动时初始化工作，关闭时释放某些资源或进行特殊操作），此时就可以使用apache commons daemon了。
+
 ### 1.2、commons daemon介绍
 Apache common deamon是用来提供java服务的安装，实现将一个普通的 Java 应用变成系统的一个后台服务，在linux下部署为后台运行程序，在windows部署为windows服务（著名的tomcat就是使用它实现启动及停止的。提供启动、停止、卸载等操作）。详细介绍可见[commons-daemon官网][2]。相对java service wrapper，commons daemon需要自己写少许代码，即按规定要求编写程序启动及关闭的入口类，仅此而已。
+
 ### 1.3、本文主要内容
 本文主要讲解两部分内容：
 
@@ -20,6 +23,7 @@ Apache common deamon是用来提供java服务的安装，实现将一个普通�
 本文示例程序与[上一篇][3]的示例（log4j+java service wrapper）放在同一工程（因此上一篇的示例本程序也适用），不过改为使用logback+commons-daemon。程序结构如下：
 ![程序结构][4]
 说明：
+
 > * 主要DaemonMainClassForLinux、DaemonMainClassForWindows及LogbackFileLogger类及logback.xml，其它的（WrapperMainClassForWindows、FileLogger及log4j.properties）是属于上一篇的示例。
 > * install目录是用于对程序封装为服务的，即存放wrapper或daemon的，daemon目录下有linux及windows的安装内容
 > * src/main/assembly下存放打包成自定义格式的maven配置（分别是linux及windows）
@@ -31,6 +35,7 @@ Apache common deamon是用来提供java服务的安装，实现将一个普通�
 
 ## 3、linux下使用commons-daemon
 linux下使用commons-daemon主要通过commons-daemon主程序及jsvc实现。本示例环境是centos6.5。
+
 ### 3.1、下载commons-daemon
 到[commons-daemon官网][7]下载，其中需要下载commons-daemon主程序和jsvc包（源码包）。如下图：
 ![commons daemon下载][8]
@@ -40,7 +45,8 @@ linux下使用commons-daemon主要通过commons-daemon主程序及jsvc实现。�
 
 ### 3.2、安装jsvc
 可先查看[官网的jsvc][10]，本示例中安装如下：把commons-daemon源码包放到/opt目录下。操作如下：
-```shell
+
+```
 [root@localhost]# cd /opt/jsvc
 [root@localhost jsvc]# unzip commons-daemon-1.0.15-src.zip
 [root@localhost jsvc]# cd /opt/jsvc/commons-daemon-1.0.15-src/src/native/unix
@@ -51,7 +57,9 @@ Now you can issue "make"
 gcc   jsvc-unix.o libservice.a -ldl -lpthread -o ../jsvc
 make[1]: 离开目录“/opt/jsvc/commons-daemon-1.0.15-src/src/native/unix/native”
 ```
+
 说明
+
 > * 确保linux上已安装java，安装需依赖java，如上述操作中`--with-java=/usr/java/jdk1.8.0_51`
 > * make完后，会在commons-daemon-1.0.15-src/src/native/unix下生成jsvc文件如下图：
 ![jsvc][11]
@@ -59,6 +67,7 @@ make[1]: 离开目录“/opt/jsvc/commons-daemon-1.0.15-src/src/native/unix/nati
 
 ### 3.3、编写程序入口类
 程序实际的功能很简单，如下（见`LogbackFileLogger`类）：
+
 ```java
 public class LogbackFileLogger {
 	private static Logger logger = LoggerFactory.getLogger(LogbackFileLogger.class);
@@ -77,7 +86,9 @@ public class LogbackFileLogger {
 	}
 }
 ```
+
 入口类只需要实现`init`,`destroy`,`start`,`stop`方法即可，安装时指定此类，jsvc会根据这些方法进行初始化、启动、关闭等操作。程序如下：
+
 ```java
 /**
  * Linux服务安装入口类
@@ -104,14 +115,17 @@ public class DaemonMainClassForLinux {
 	}
 }
 ```
+
 说明：
+
 > * init方法有参数，destroy、start及stop方法无参。
 > * 本示例中的初始化`MainClass.initWorkDir();`用于指定日志输出的目录。
 > * `start`方法作启动入口，`stop`方法为关闭，本示例简单退出程序，若需要自定义操作，可在此方法编写即可。
 
 ### 3.4、编写安装脚本
 安装脚本在示例install/daemon/linux下，主要设置程序名称，路径，jsvc路径，java路径，程序入口类，日志输出目录即可。详细如下：
-```shell
+
+```
 #!/bin/sh
 # description: jsw-test
 # processname: jsw-test
@@ -180,8 +194,10 @@ case "$1" in
 	    ;;
 esac
 ```
+
 一般还需要把程序作为系统服务开机启动，因此本示例中提供了`set_auto_start.sh`文件，注意修改相应的文件名称：
-```shell
+
+```
 #!/bin/bash
 
 DAEMON_HOME=$(pwd)
@@ -207,6 +223,7 @@ echo "设置${AUTO_RUN_FILE_NAME}开机启动结束"
 ### 3.5、程序打包及启动
  使用maven的assembly插件打包，流程可见[上一篇][12]，当前示例打linux的zip包，具体配置如下：
  pom.xml
+ 
 ```xml
 <execution>
 	<id>make-daemon-linux-zip</id>
@@ -263,20 +280,25 @@ daemon-linux-zip.xml
 	</fileSets>
 </assembly>
 ```
+
 程序包(jsw-test-deamon-linux.zip)打出来后，即可放到linux下进行部署，部署过程如下：
-```shell
+
+```
 [root@localhost opt]# unzip jsw-test-deamon-linux.zip -d jsw-test
 [root@localhost opt]# cd jsw-test/bin
 [root@localhost bin]# chmod 777 *.sh
 [root@localhost bin]# ./jsw-test.sh start
 ```
+
 说明：
+
 > * 本示例中放到/opt下，解压，修改执行权限，执行。(`start`,`stop`,`restart`参数)。
 > * 日志文件按脚本设置的目录，输出在/opt/jsw-test/logs，其下查看启动日志：jsw-test.err  jsw-test.out
 > * /opt/jsw-test/classes/logs下查看程序使用logback的输出。
 
 ## 4、windows下使用commons-daemon
 windows下使用commons-daemon安装服务跟linux下流程上差不多，差别是使用procrun，脚本的编写。
+
 ### 4.1、下载commons-daemon及procrun
 跟linux一样，到[commons-daemon官网][13]下载。
 
@@ -287,6 +309,7 @@ windows下使用commons-daemon安装服务跟linux下流程上差不多，差别
 
 ### 4.2、编写程序入口类
 跟linux下的入口类不同，入口类只需要实现`start`,`stop`方法，安装时指定此类，procrun会根据这些方法进启动、关闭操作。***注意：与linux的不同，此两个方法需要带参数，否则会报找不到start方法错误***，程序如下：
+
 ```java
 /**
  * Windows服务安装入口类
@@ -308,9 +331,11 @@ public class DaemonMainClassForWindows {
 	}
 }
 ```
+
 ### 4.3、编写安装脚本
 使用procrun安装成服务，需写bat脚本进行安装（见示例中的install/daemon/windows目录下的install.bat,uninstall.bat）。主要是设置服务名称，java路径，依赖类，入口类，prunsrv路径，日志路径。**注意jvm的大小参数请根据实际情况修改**详细如下：
 install.bat：
+
 ```
 @echo off
 
@@ -357,7 +382,9 @@ rem 安装
   
 :end
 ```
+
 uninstall.bat：
+
 ```
 @echo off
 cd..
@@ -369,7 +396,9 @@ set "SRV=%BASEDIR%\bin\prunsrv.exe"
 
 :end
 ```
+
 一般安装好服务后，则可在控制面板－管理程序－服务中进行启动，关闭管理。若需要使用脚本启动，可使用prunmgr.exe进行管理，编写如下：
+
 ```
 @echo off
 cd..
@@ -382,9 +411,11 @@ echo start %SERVICE_NAME%
 
 :end
 ```
+
 ### 4.4、程序打包及安装
 使用maven的assembly插件打包，流程可见[上一篇][17]，当前示例打windows的zip包，具体配置如下：
  pom.xml
+ 
 ```xml
 <execution>
 	<id>make-daemon-win-zip</id>
@@ -402,7 +433,9 @@ echo start %SERVICE_NAME%
 	</configuration>
 </execution>
 ```
+
 daemon-win-zip.xml
+
 ```xml
 <assembly>
 	<id>daemon-win</id>
@@ -437,6 +470,7 @@ daemon-win-zip.xml
 	</fileSets>
 </assembly>
 ```
+
 程序包(jsw-test-deamon-win.zip)打出来后，即可放到windows目录下进行部署，部署过程如下：
 
  - 解压jsw-test-deamon-win.zip到jsw-test-deamon-win目录，打开bin目录，运行install.bat。**注意：运行弹出窗口，运行时间有点长，需等待。**
