@@ -1,10 +1,7 @@
-﻿# java服务安装(二)：使用commons-daemon
-
-标签（空格分隔）： java daemon 
-
 ---
-
-[TOC]
+layout: default
+title: java服务安装(二)：使用commons-daemon
+---
 
 ## 1、概述
 ### 1.1、为什么使用commons daemon
@@ -314,7 +311,7 @@ public class DaemonMainClassForWindows {
 ### 4.3、编写安装脚本
 使用procrun安装成服务，需写bat脚本进行安装（见示例中的install/daemon/windows目录下的install.bat,uninstall.bat）。主要是设置服务名称，java路径，依赖类，入口类，prunsrv路径，日志路径。**注意jvm的大小参数请根据实际情况修改**详细如下：
 install.bat：
-```bat
+```
 @echo off
 
 rem 设置程序名称
@@ -361,7 +358,7 @@ rem 安装
 :end
 ```
 uninstall.bat：
-```bat
+```
 @echo off
 cd..
 set BASEDIR=%CD%
@@ -373,7 +370,7 @@ set "SRV=%BASEDIR%\bin\prunsrv.exe"
 :end
 ```
 一般安装好服务后，则可在控制面板－管理程序－服务中进行启动，关闭管理。若需要使用脚本启动，可使用prunmgr.exe进行管理，编写如下：
-```bat
+```
 @echo off
 cd..
 set BASEDIR=%CD%
@@ -451,9 +448,9 @@ daemon-win-zip.xml
 [jsw-test.zip][18]; 密码: `uryd`
 
 
-  [1]: http://blog.csdn.net/masson32/article/details/51802732
+  [1]: https://mianshenglee.github.io/java%E6%9C%8D%E5%8A%A1%E5%AE%89%E8%A3%85(%E4%B8%80)-%E4%BD%BF%E7%94%A8java-service-wrapper%E5%8F%8Amaven%E6%89%93zip%E5%8C%85/
   [2]: http://commons.apache.org/proper/commons-daemon/index.html
-  [3]: http://blog.csdn.net/masson32/article/details/51802732
+  [3]: https://mianshenglee.github.io/java%E6%9C%8D%E5%8A%A1%E5%AE%89%E8%A3%85(%E4%B8%80)-%E4%BD%BF%E7%94%A8java-service-wrapper%E5%8F%8Amaven%E6%89%93zip%E5%8C%85/
   [4]: http://ww4.sinaimg.cn/large/72d660a7gw1f5itjvd631j209n0oj41l.jpg
   [5]: http://ww4.sinaimg.cn/large/72d660a7gw1f5iut0cygxj206t01caa2.jpg
   [6]: http://ww4.sinaimg.cn/large/72d660a7gw1f5iutek36tj20b70gtmy9.jpg
@@ -467,5 +464,5 @@ daemon-win-zip.xml
   [14]: http://commons.apache.org/proper/commons-daemon/procrun.html
   [15]: http://www.apache.org/dist/commons/daemon/binaries/windows/
   [16]: http://ww3.sinaimg.cn/large/72d660a7gw1f5ixdqnaxkj20bm04wmxk.jpg
-  [17]: http://blog.csdn.net/masson32/article/details/51802732
+  [17]: https://mianshenglee.github.io/java%E6%9C%8D%E5%8A%A1%E5%AE%89%E8%A3%85(%E4%B8%80)-%E4%BD%BF%E7%94%A8java-service-wrapper%E5%8F%8Amaven%E6%89%93zip%E5%8C%85/
   [18]: http://pan.baidu.com/s/1jIPgLTk
