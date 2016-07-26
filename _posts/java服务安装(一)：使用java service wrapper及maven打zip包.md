@@ -1,6 +1,6 @@
 ---
 layout: default
-title: 我的Blog
+title: java服务安装(一)：使用java service wrapper及maven打zip包
 ---
 
 [TOC]
