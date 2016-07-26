@@ -46,7 +46,7 @@ linux下使用commons-daemon主要通过commons-daemon主程序及jsvc实现。�
 ### 3.2、安装jsvc
 可先查看[官网的jsvc][10]，本示例中安装如下：把commons-daemon源码包放到/opt目录下。操作如下：
 
-```
+```sh
 [root@localhost]# cd /opt/jsvc
 [root@localhost jsvc]# unzip commons-daemon-1.0.15-src.zip
 [root@localhost jsvc]# cd /opt/jsvc/commons-daemon-1.0.15-src/src/native/unix
@@ -125,7 +125,7 @@ public class DaemonMainClassForLinux {
 ### 3.4、编写安装脚本
 安装脚本在示例install/daemon/linux下，主要设置程序名称，路径，jsvc路径，java路径，程序入口类，日志输出目录即可。详细如下：
 
-```
+```sh
 #!/bin/sh
 # description: jsw-test
 # processname: jsw-test
@@ -284,7 +284,7 @@ daemon-linux-zip.xml
 
 程序包(jsw-test-deamon-linux.zip)打出来后，即可放到linux下进行部署，部署过程如下：
 
-```
+```sh
 [root@localhost opt]# unzip jsw-test-deamon-linux.zip -d jsw-test
 [root@localhost opt]# cd jsw-test/bin
 [root@localhost bin]# chmod 777 *.sh
@@ -337,7 +337,7 @@ public class DaemonMainClassForWindows {
 使用procrun安装成服务，需写bat脚本进行安装（见示例中的install/daemon/windows目录下的install.bat,uninstall.bat）。主要是设置服务名称，java路径，依赖类，入口类，prunsrv路径，日志路径。**注意jvm的大小参数请根据实际情况修改**详细如下：
 install.bat：
 
-```
+```sh
 @echo off
 
 rem 设置程序名称
@@ -386,7 +386,7 @@ rem 安装
 
 uninstall.bat：
 
-```
+```sh
 @echo off
 cd..
 set BASEDIR=%CD%
@@ -400,7 +400,7 @@ set "SRV=%BASEDIR%\bin\prunsrv.exe"
 
 一般安装好服务后，则可在控制面板－管理程序－服务中进行启动，关闭管理。若需要使用脚本启动，可使用prunmgr.exe进行管理，编写如下：
 
-```
+```sh
 @echo off
 cd..
 set BASEDIR=%CD%
