@@ -21,7 +21,7 @@ Apache common deamon是用来提供java服务的安装，实现将一个普通�
 
 ## 2、程序示例
 本文示例程序与[上一篇][3]的示例（log4j+java service wrapper）放在同一工程（因此上一篇的示例本程序也适用），不过改为使用logback+commons-daemon。程序结构如下：
-![程序结构][4]
+![程序结构][4]  
 说明：
 
 > * 主要DaemonMainClassForLinux、DaemonMainClassForWindows及LogbackFileLogger类及logback.xml，其它的（WrapperMainClassForWindows、FileLogger及log4j.properties）是属于上一篇的示例。
@@ -29,15 +29,15 @@ Apache common deamon是用来提供java服务的安装，实现将一个普通�
 > * src/main/assembly下存放打包成自定义格式的maven配置（分别是linux及windows）
 > * pom.xml配置打包插件信息
 
-使用assembly打包，打包出windows包及linux包，包结构是bin,classes和lib三个目录，分别是安装目录，java程序，依赖包，如下所示：
-![打包结果][5]
+使用assembly打包，打包出windows包及linux包，包结构是bin,classes和lib三个目录，分别是安装目录，java程序，依赖包，如下所示：  
+![打包结果][5]  
 ![包结构][6]
 
 ## 3、linux下使用commons-daemon
 linux下使用commons-daemon主要通过commons-daemon主程序及jsvc实现。本示例环境是centos6.5。
 
 ### 3.1、下载commons-daemon
-到[commons-daemon官网][7]下载，其中需要下载commons-daemon主程序和jsvc包（源码包）。如下图：
+到[commons-daemon官网][7]下载，其中需要下载commons-daemon主程序和jsvc包（源码包）。如下图：  
 ![commons daemon下载][8]
 
  - 下载commons-daemon-1.0.15-bin.tar.gz，解压出commons-daemon-1.0.15.jar放到程序目录中（本示例为install/daemon），以便使用。
