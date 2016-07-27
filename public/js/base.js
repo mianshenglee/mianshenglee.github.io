@@ -57,15 +57,6 @@ $(document).ready(function() {
     $(this).data('clicked',!isClicked);
 
   });
-  
-  $("body").on('click','.pjaxlink',function(){
-	  if($(this).hasClass('alone-tab')){
-		  $('.aside2').hide();
-	  }else{
-		  $('.aside2').show();
-	  }
-	  
-  });
 
   $(document).pjax('.pjaxlink', '#pjax', { fragment: "#pjax", timeout: 10000 });
   $(document).on("pjax:end", function() {
