@@ -44,7 +44,9 @@ java程序打包一般打成jar包，如果是供其它调用打包成一个jar�
 
 ## 2、程序示例
 按前面所说的要求，本文以下面的一个示例进行讲解，示例使用标准maven archetype结构，只实现了一个简单的文件写入内容的功能，使用jsw对程序进行包装，并把它使用maven打包成zip，解压后直接使用jsw的bin下的脚本安装或卸载服务。
+
 ![源码结构][6]
+
 从图中可见，程序很简单，仅一个java类FileLogger用于写日志到文件，使用log4j(1.2.16版本，现在流行slf4j和logback了)输出日志内容。日志路径是当前的classpath下的logs目录。log4j使用参考它的[官网][7]，当前我们主要关注以下两点：
 
 - wrapper文件夹:当前只配置windows，存放jsw的文件，以便把程序包装为服务安装。若是linux，可自行添加文件夹。
@@ -162,8 +164,11 @@ jsw在不添加任何代码的情况下可以直接使用，把java程序安装�
 
 ### 4.1、jsw介绍与下载
 到[java service wrapper官网][11]下载，它支持各种操作系统，按系统下载即可，这里讲解windows的，下载32位(64位的收费)。
+
 ![jsw下载][12]
+
 下载解压后，内容如下：
+
 ![jsw解压内容][13]
 
 - bin：wrapper运行文件及安装脚本
@@ -177,11 +182,13 @@ jsw在不添加任何代码的情况下可以直接使用，把java程序安装�
 java程序中添加jsw的步骤很简单，主要以下两步：
 
  1. 复制必要的wrapper文件到程序需要的目录中;只有四个目录是必要的："bin","conf","lib","logs"，如当前示例中，在main目录下新建wrapper目录，复制上面wrapper的的"bin","conf","lib","logs"这四个文件夹到此目录。去掉jsw的测试文件，最后结构如下：
+ 
  ![jsw结构][14]
- 2. 修改conf/wrapper.conf文件
+ 
+ 2. 修改conf/wrapper.conf文件，
 一般会把经常修改的作为变量放在前面，以便后面配置使用，如当前示例，会先设置以下变量
 
-```
+```sh
 rem 程序目录位置
 set.APP_HOME=../..
 rem java目录位置
@@ -200,21 +207,21 @@ set.USER_MAIN_CLASS=service.FileLogger
 然后主要设置以下配置（`%var%`为变量引用），其它配置按默认即可。如有个性化需求，可看[官方文档][15]
 
 >* JVM位置：
-wrapper.java.command=%JAVA_HOME%/bin/java
+`wrapper.java.command=%JAVA_HOME%/bin/java`
 >* 你的Java应用程序的运行类（主类）
-wrapper.app.parameter.1=%USER_MAIN_CLASS%
+`wrapper.app.parameter.1=%USER_MAIN_CLASS%`
 >* 你的Java程序所需的类路径：
-wrapper.java.classpath.1=../lib/wrapper.jar
-wrapper.java.classpath.2=%APP_HOME%/classes
-wrapper.java.classpath.3=%APP_HOME%/lib/*
+`wrapper.java.classpath.1=../lib/wrapper.jar`
+`wrapper.java.classpath.2=%APP_HOME%/classes`
+`wrapper.java.classpath.3=%APP_HOME%/lib/*`
 >* 你的Wrapper.DLL或wrapper.jar所在的目录
-wrapper.java.library.path.1=../lib
+`wrapper.java.library.path.1=../lib`
 >* 注册为服务的名称和显示名，你可以随意进行设置
-wrapper.name=%SERVICE_EN_NAME%
-wrapper.displayname=%SERVICE_CH_NAME%
-wrapper.description=%SERVICE_DESCRIPTION%
+`wrapper.name=%SERVICE_EN_NAME%`
+`wrapper.displayname=%SERVICE_CH_NAME%`
+`wrapper.description=%SERVICE_DESCRIPTION%`
 >* 日志文件位置
-wrapper.logfile=../logs/wrapper.log
+`wrapper.logfile=../logs/wrapper.log`
 
 配置完之后，使用bin下的脚本可进行相应的安装，卸载操作。
 
