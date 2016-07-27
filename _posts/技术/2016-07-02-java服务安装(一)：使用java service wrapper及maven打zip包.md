@@ -219,8 +219,7 @@ set.USER_MAIN_CLASS=service.FileLogger
 >* 注册为服务的名称和显示名，你可以随意进行设置  
 `wrapper.name=%SERVICE_EN_NAME%`  
 `wrapper.displayname=%SERVICE_CH_NAME%`  
-`wrapper.description=%SERVICE_DESCRIPTION%`
-
+`wrapper.description=%SERVICE_DESCRIPTION%`  
 >* 日志文件位置
 `wrapper.logfile=../logs/wrapper.log`
 
