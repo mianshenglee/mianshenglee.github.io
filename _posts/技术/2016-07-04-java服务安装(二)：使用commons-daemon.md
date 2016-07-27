@@ -25,7 +25,8 @@ Apache common deamon是用来提供java服务的安装，实现将一个普通�
 
 ## 2、程序示例
 本文示例程序与[上一篇][3]的示例（log4j+java service wrapper）放在同一工程（因此上一篇的示例本程序也适用），不过改为使用logback+commons-daemon。程序结构如下：  
-![程序结构][4]  
+![程序结构][4]
+
 说明：
 
 > * 主要DaemonMainClassForLinux、DaemonMainClassForWindows及LogbackFileLogger类及logback.xml，其它的（WrapperMainClassForWindows、FileLogger及log4j.properties）是属于上一篇的示例。
