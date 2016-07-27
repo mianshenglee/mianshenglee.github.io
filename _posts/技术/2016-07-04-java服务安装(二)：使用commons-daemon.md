@@ -10,7 +10,7 @@ description:
 ## 1、概述
 
 ### 1.1、为什么使用commons daemon
-[上一篇][1]已对使用java service wrapper工具与java程序集成进行了讲解，java service wrapper使用简单，集成方法简单，不修改任何代码，一般情况下已满足需求。  
+[上一篇][1]已对使用java service wrapper工具与java程序集成进行了讲解，java service wrapper使用简单，集成方法简单，不修改任何代码，一般情况下已满足需求。    
 
 但是，java service wrapper只对java程序的开启及关闭进行操作，  若需要对程序启动前及关闭前进行一些自定义的操作（如启动时初始化工作，关闭时释放某些资源或进行特殊操作），此时就可以使用apache commons daemon了。
 
@@ -24,7 +24,7 @@ Apache common deamon是用来提供java服务的安装，实现将一个普通�
 > * windows下使用commons-daemon把java安装为windows服务
 
 ## 2、程序示例
-本文示例程序与[上一篇][3]的示例（log4j+java service wrapper）放在同一工程（因此上一篇的示例本程序也适用），不过改为使用logback+commons-daemon。程序结构如下：
+本文示例程序与[上一篇][3]的示例（log4j+java service wrapper）放在同一工程（因此上一篇的示例本程序也适用），不过改为使用logback+commons-daemon。程序结构如下：  
 ![程序结构][4]  
 说明：
 
@@ -65,7 +65,7 @@ make[1]: 离开目录“/opt/jsvc/commons-daemon-1.0.15-src/src/native/unix/nati
 说明
 
 > * 确保linux上已安装java，安装需依赖java，如上述操作中`--with-java=/usr/java/jdk1.8.0_51`
-> * make完后，会在commons-daemon-1.0.15-src/src/native/unix下生成jsvc文件如下图：
+> * make完后，会在commons-daemon-1.0.15-src/src/native/unix下生成jsvc文件如下图：  
 ![jsvc][11]
 > * 记住此jsvc路径，安装时使用。
 
@@ -308,8 +308,8 @@ windows下使用commons-daemon安装服务跟linux下流程上差不多，差别
 跟linux一样，到[commons-daemon官网][13]下载。
 
  - 下载commons-daemon主程序（`commons-daemon-1.0.15-bin.zip`），解压出`commons-daemon-1.0.15.jar`，也可以使用前面下载的jar包。
- - 下载procrun，[官网的procrun页面][14]只对它的使用进行讲解，在哪里下载即没有提及，这里特别提醒一下，需要在[这里下载procrun][15]，下载`commons-daemon-1.0.15-bin-windows.zip`。解压出文件如下：
-![procrun包解压][16]
+ - 下载procrun，[官网的procrun页面][14]只对它的使用进行讲解，在哪里下载即没有提及，这里特别提醒一下，需要在[这里下载procrun][15]，下载`commons-daemon-1.0.15-bin-windows.zip`。解压出文件如下：  
+ ![procrun包解压][16]  
 复制`commons-daemon-1.0.15.jar`,prunmgr.exe及prunsrv.exe到安装目录（见本示例中为install及install/windows）。
 
 ### 4.2、编写程序入口类
