@@ -5330,7 +5330,7 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
     padding: 10px 15px;
     margin-bottom: -1px;
     color: #fff;
-    background-color: #428bca;
+    background-color: #29afec;
     border: 1px solid #555;/*115449;*/
     border-left: 0px;
     border-right: 0px;
@@ -5341,7 +5341,7 @@ a.thumbnail:hover, a.thumbnail:focus, a.thumbnail.active {
 a.list-group-item-lay:hover, a.list-group-item-lay:focus {
     text-decoration: none;
     color: #fff;
-    background-color: #286090;
+    background-color: #428bca;
 }
 
 .list-group-item-lay:first-child {
