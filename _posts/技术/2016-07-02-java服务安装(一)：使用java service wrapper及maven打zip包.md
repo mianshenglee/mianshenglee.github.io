@@ -211,15 +211,22 @@ set.USER_MAIN_CLASS=service.FileLogger
 >* 你的Java应用程序的运行类（主类）
 `wrapper.app.parameter.1=%USER_MAIN_CLASS%`
 >* 你的Java程序所需的类路径：
+
 `wrapper.java.classpath.1=../lib/wrapper.jar`
+
 `wrapper.java.classpath.2=%APP_HOME%/classes`
+
 `wrapper.java.classpath.3=%APP_HOME%/lib/*`
+
 >* 你的Wrapper.DLL或wrapper.jar所在的目录
 `wrapper.java.library.path.1=../lib`
 >* 注册为服务的名称和显示名，你可以随意进行设置
 `wrapper.name=%SERVICE_EN_NAME%`
+
 `wrapper.displayname=%SERVICE_CH_NAME%`
+
 `wrapper.description=%SERVICE_DESCRIPTION%`
+
 >* 日志文件位置
 `wrapper.logfile=../logs/wrapper.log`
 
