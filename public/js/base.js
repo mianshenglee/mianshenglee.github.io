@@ -58,7 +58,7 @@ $(document).ready(function() {
 
   });
   
-  $(body).on('click','.pjaxlink',function(){
+  $("body").on('click','.pjaxlink',function(){
 	  if($(this).hasClass('alone-tab')){
 		  $('.aside2').hide();
 	  }else{
