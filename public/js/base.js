@@ -81,7 +81,7 @@ function contentEffects(){
   //remove the asidebar
   $('.row-offcanvas').removeClass('active');
   if($("#nav").length > 0){
-    $("#content > h2,#content > h3,#content > h4,#content > h5,#content > h6").each(function(i) {
+    $("#content > h1,#content > h2,#content > h3,#content > h4,#content > h5,#content > h6").each(function(i) {
         var current = $(this);
         current.attr("id", "title" + i);
         tag = current.prop('tagName').substr(-1);
