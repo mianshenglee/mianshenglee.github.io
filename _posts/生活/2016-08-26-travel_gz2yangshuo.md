@@ -1,5 +1,11 @@
-
---- 
+---
+layout: post
+title: 20160826~28广州到兴坪-阳朔三日悠闲游
+category: 生活
+tags: Life
+keywords: 旅游,兴坪,阳朔
+description: 
+---
 
 # 一、准备与计划
 行程共三天两晚，广州-阳朔高铁来回，休闲游
