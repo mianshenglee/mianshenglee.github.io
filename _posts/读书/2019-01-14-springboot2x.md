@@ -7,11 +7,11 @@ keywords: springboot
 description: 讲述如何使用Spring Boot 2.x进行编程开发的技术书籍。
 ---
 
-## 整体感受
+## 1、整体感受
 
 这是一本讲述如何使用Spring Boot 2.x进行编程开发的技术书籍，全书围绕Spring Boot进行讲解，并且提供编程示例，示例简单易懂，而且作者确实是有相当丰富的开发经验，文章语言流畅，既讲到编程技术也对其中的原理有较好的描述，让读者知其然也知其所以然。其中重点对Spring MVC的使用进行了大篇幅的讲解，比较透彻。通过此书，基本对Spring Boot的Web开发有了整体了解，作为入门级的Spring Boot学习书籍，值得一读。
 
-## 内容提纲
+## 2、内容提纲
 
 对于Spring的web开发，围绕的开发内容基本是属于Spring MVC，数据库访问，缓存处理，安全，分布式应用几个范畴，因此，书的大体结构也是分这几大部分，如下：
 ![spring boot 2.x提纲.jpg-30.3kB][1]
@@ -20,13 +20,13 @@ description: 讲述如何使用Spring Boot 2.x进行编程开发的技术书籍�
 
 下面对我读完后个人认为挺重要的内容做了个粗略的记录，也提醒自己在使用Spring Boot的过程中注意一下。
 
-## Spring Boot发展
+## 3、Spring Boot发展
 
 回顾java web的开发，从最初的自己编写Servlet进行mapping，到后来Spring的引入而使用Struct，然后后来直接使用Spring MVC，通过XML配置实现web相关组件注入开发。再后来变成Spring MVC的注解方式进行装配，然后发展到现在Spring Boot，以全注解，自动装配的方式实现开发。基本经历这几波：
 
 Spring MVC xml装配 -> Spring MVC Servlet3.0注解装配 -> Spring Boot全注解自动装配。
 
-## Spring IOC 及
+## 4、Spring IOC 及AOP
 
 Spring Boot是基于Spring的，Spring的核心是IOC和AOP，因此，作者也对这两个进行了比较通俗易发的讲解。
 
@@ -55,7 +55,7 @@ Spring Boot中，bean装配，使用@Component注解；依赖注入，使用@Aut
 
 动态代理有多种实现方式，业界比较流行的是JDK，CGLIB，Javassit，ASM。Spring使用JDK及CGLIB。JDK要求被代理对象必须有接口，CGLIB不做要求。默认情况下，Spring处理是若需要使用AOP的类有接口，则使用JDK，没有则使用CGLIB。
 
-## 访问数据库及数据库事务
+## 5、访问数据库及数据库事务
 
 Spring Boot访问数据库有多种方式，包括jdbcTemplate，jpa，mybatis。在以管理系统时代，hibernate模型化有助于系统的分析和建模，重点在业务模型的分析和设计，属于表和业务模型分析阶段。现在是移动互联网时代，相对而言业务简单，但用户量大，面对的问题主要是大数据，高并发，性能问题。更关注性能和灵活性。jpa渐渐没落，mybatis使用更多。
 mybatis可定制sql，存储过程和高级映射的优秀持久层框架。因此，重点讲解的时Mybatis使用。
@@ -82,7 +82,7 @@ Spring中的事务使用AOP实现的。流程如下：
 （6）NEVER：不使用，若有事务，则报错，没有则运行子方法
 （7）NESTED：若当前有事务，若子方法发生异常回滚，只回滚子方法执行过的SQL，不回滚当前方法的事务。
 
-## Redis-性能利器
+## 6、Redis-性能利器
 
 - redis是基于内存的数据库，速度快，是关系数据库的几到几十倍。
 - 7种数据类型：字符串、散列、列表、集合、有序集合，基数，地理位置。
@@ -96,24 +96,24 @@ Spring中的事务使用AOP实现的。流程如下：
 （3）发布订阅：消息的常用模式，Redis提供一个渠道，让消息能够发送到这个渠道，而多个系统可以监听这个渠道，当消息发送到渠道，渠道会通知它的监听者。
 （4）Lua：为了增强Redis的计算能力，从2.6开始提供了Lua支持，且它是具备原子性，保证一致性。比redis自身的事务要好。两种运行Lua的方法，一是直接发送Lua到Redis服务器，另一种是先把Lua发送到Redis，Redis对Lua脚本进行缓存，并返回SHA1的32位编码回来，之后只需要发送SHA1和相关参数给Redis即可。使用DefaultRedisScript。
 
-## MongoDB
+## 7、MongoDB
 
 - mongodb是一个基于分布式文件存储的开源文档数据库系统。目的是为Web应用提供可扩展的高性能数据存储解决方案。对于统计、分析、按条件查询提供支持。
 - 使用MongoTemplate进行文档操作。
 
-## Spring MVC
+## 8、Spring MVC
 
 Spring MVC是这本书的重点，从它的运行流程到原理，把参数处理，数据模型，视图模型，文件上传，拦截器、国际化等都覆盖到了。
 
-### Spring MVC运行流程
+### 8.1 Spring MVC运行流程
 
 ![mvc流程.png-120.3kB][6]
 
-### HandlerMapping
+### 8.2 HandlerMapping
 
 spring mvc 启动阶段就会将@RequestMapping所配置的内容保存到处理器映射（HandlerMapping）中去，然后等待请求，通过拦截请求信息和HandlerMapping进行匹配，找到对应的处理器（它包含控制器controller逻辑），并将处理器及拦截器保存到HandlerExecutionChain对象中，返回给DispatcherServlet，这样就可以运行它们了。
 
-### Controller参数
+### 8.3 Controller参数
 
 - （1）无注解情况下，参数名需要与HTTP请求的参数名一致，允许为空。
 - （2）使用RequestParam，可以指定HTTP参数和方法参数的映射关系。默认不能为空，可设置required为false，允许为空。
@@ -124,34 +124,34 @@ spring mvc 启动阶段就会将@RequestMapping所配置的内容保存到处理
 - （7）自定义参数转换，参数使用@RequestBody，处理器会采用请求体的内容进行转换。一对一转换，实现Converter。日期及货币使用Formatter，GenericConverter集合和数组转换，spring mvc已提供StringToCollectionConverter进行转换，转为List。
 ![请求体转换.png-79.3kB][7]
 
-### 参数验证
+### 8.4 参数验证
 
 - （1）JSR-303验证，通过注解方式进行验证。需在POJO属性中加入相关注解，在Controller中使用@Valid表示启动验证机制。
 - （2）自定义验证，实现Validator接口，添加@InitBinder的方法，把自定义的验证器绑定到WebDataBinder中。
 
-### 数据模型（Model）
+### 8.5 数据模型（Model）
 
 控制器是业务逻辑核心，模型是存放数据的地方，作用是绑定数据，为后面的视图渲染做准备。控制器方法参数中使用ModelAndView、Model、ModelMap类型，Spring MVC会自动创建数据模型对象。
 
-### 视图（View）及视图解析器
+### 8.6 视图（View）及视图解析器
 
 视图分为逻辑视图和非逻辑视图，逻辑视图是需要ViewResolver进一步定位的，如InternalResourceViewResolver，对应JSP或html，非逻辑视图是直接把数据渲染出来的，如MappingJackson2JsonView，对应JSON。
 
-### 文件上传
+### 8.7 文件上传
 
 - spring mvc 中，DispatchServlet会使用适配器模式，将HttpServletRequest接口对象转为MultipartHttpServletRequest，实现对文件上传的支持。。
 
 - 文件上传可以使用Servlet API的Part接口或Spring MVC提供的MultipartFile接口作为Cotroller方法参数。即可进行文件上传。
 
-### 拦截器
+### 8.8 拦截器
 
 拦截器会对处理器进行拦截，可以用来增强处理器功能。所有拦截器需要实现HandlerInterceptor接口。在配置类中实现WebMvcConfigurer，注册自定义的拦截器。多个拦截器，执行顺序是：处理前方法先注册先执行，处理后方法先注册后执行。
 
-### 国际化
+### 8.9 国际化
 
 SpringMvc提供国际化消息源机制，即MessageSource接口体系。配置Sping.messages等配置，把相应的messages.properties文件放到resources目录即可。
 
-## REST风格编程
+## 9、REST风格编程
 
 - REST(representational state transfer 可描述性资源状态转移)，即资源（如用户，角色菜单），表现层（如JSON，XML），转移（增删改查）。rest风格被推荐为各个微服务系统之间用于交互的方式 。此风格中，每一个资源都只是对应着一个网址，而一个代表资源网址应该是一个名词，而不存在动词，而简易参数尽量通过网址进行传递。
 - REST风格架构特点
@@ -169,7 +169,7 @@ Spring 4.3后，添加GetMapping/PostMapping/PutMapping/PatchMapping/DeleteMappi
 - 使用@RestController，可以把Controller返回的对象转化为JSON数据集。使用RestTemplate对REST请求进行系统之间的调用。
     
 
-## 安全Spring Security
+## 10、安全Spring Security
 
 - Spring Security是基于Spring提供安全访问控制解决方案的框架。跟Java Web工程一样，使用Filter对请求进行拦截，在Filter中通过自己的验证逻辑决定是否放行。
 
@@ -177,7 +177,7 @@ Spring 4.3后，添加GetMapping/PostMapping/PutMapping/PatchMapping/DeleteMappi
 - 使用@EnableWebSecurity来启动Spring Security。
 - 通过继承WebSecurityConfigurerAdapter抽象类来自定义自己的安全拦截方案。
 
-## 其它
+## 11、其它
 书还介绍了异步线程池、异步消息、定时任务、websocket、WebFlux、Spring Cloud等技术。有相应的例子，读者可以写一下，作为初步的入门技术，还是挺有益处的，特别是Spring Cloud，如服务发现与治理：Eureka，服务调用：Ribbon和Feign，断路由：Histrix，网关：Zuul。都是微服务开发需要用到的技术。
 
   [1]: http://static.zybuluo.com/miansheng/bnaq608iqom9su6rkym69177/spring%20boot%202.x%E6%8F%90%E7%BA%B2.jpg
