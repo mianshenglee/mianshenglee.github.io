@@ -180,6 +180,8 @@ Spring 4.3后，添加GetMapping/PostMapping/PutMapping/PatchMapping/DeleteMappi
 ## 11、其它
 书还介绍了异步线程池、异步消息、定时任务、websocket、WebFlux、Spring Cloud等技术。有相应的例子，读者可以写一下，作为初步的入门技术，还是挺有益处的，特别是Spring Cloud，如服务发现与治理：Eureka，服务调用：Ribbon和Feign，断路由：Histrix，网关：Zuul。都是微服务开发需要用到的技术。
 
+资源下载：《深入浅出Spring Boot 2.x 》链接: https://pan.baidu.com/s/1sUneRCwDGeXsc51yIqGy5A 提取码: 5jyk
+
   [1]: http://static.zybuluo.com/miansheng/bnaq608iqom9su6rkym69177/spring%20boot%202.x%E6%8F%90%E7%BA%B2.jpg
   [2]: http://static.zybuluo.com/miansheng/si3qkv3o314vr8lsggd8qvco/bean%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F.png
   [3]: http://static.zybuluo.com/miansheng/qzhc9bzi7oilnm8wpcyewr74/%E5%88%9D%E5%A7%8B%E5%8C%96Bean.png
