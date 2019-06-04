@@ -1,8 +1,8 @@
 ---
 layout: post
-title: 部署工具(deploy-tool)开源
+title: 数据批处理神器-Spring Batch(1)简介及使用场景
 category: 技术
-tags: Java
+tags: SpringBatch
 keywords: 
 description: 
 ---
