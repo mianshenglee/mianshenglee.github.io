@@ -12,7 +12,6 @@ description:
 tags： springbatch
 
 ---
-[TOC]
 
 # 1.引言
 最近使用`Spring Batch`进行做数据迁移、数据同步、数据批处理等工作，感叹`Spring Batch`设计之简洁，对批处理编程的抽象能力之强大。
@@ -91,12 +90,16 @@ tags： springbatch
 
 ## 4.1 Spring Batch架构
 从`Spring Batch`的[github开源项目][1]中，可以看到主要是`spring-batch-infrastructure`和`spring-batch-core`模块代码，这也构成了它的主要架构。如下图：
+
 ![架构][2]
+
 图中突出了三个主要的高级组件：应用层（`Application`），核心层(`Batch Core`)和基础架构层(`Batch Infrastructure`)。其中该应用层包含开发人员使用`Spring Batch`编写的所有自定义的批处理作业和自定义代码。 核心层包含启动和控制批处理作业所需的核心运行时类。它包括 `JobLauncher`，`Job` 和 `Step` 的实现。 应用层和核心层都建立 在通用基础架构之上。此基础结构包含通用的读(`ItemReader`)、写(`ItemWriter`)和服务处理（如`RetryTemplate`）。在开发应用时，引用`spring-batch-infrastructure`和`spring-batch-core`包，即可使用基础架构层及核心层内容，然后基于这两层进行应用业务逻辑的实现。
 
 ## 4.2 Spring Batch基本概念
 熟悉`Spring Batch`，先从基本概念学起，开发过程中不可避免会使用到这些概念，因此需要先了解。下图是`Spring Batch`批处理的具体组件图：
+
 ![Spring Batch组件图][3]
+
 前面已经提到，`Spring Batch`在基础架构层，把任务抽象为`Job`和`Step`，一个`Job`由多个`Step`来完成，每个`step`对应一个`ItemReader`、`ItemProcessor`及`ItemWriter`。`Job`是通过`JobLauncher`来启动，`Job`及`Job`的运行结果和状态、`Step`的运行结果和状态，都会保存在`JobRepository`中。
 概念说明可见下表：
 |领域对象|描述|
