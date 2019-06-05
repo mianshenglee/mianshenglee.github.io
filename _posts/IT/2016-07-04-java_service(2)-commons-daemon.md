@@ -1,7 +1,7 @@
 ---
 layout: post
 title: java服务安装(二)：使用commons-daemon
-category: 技术
+category: IT
 tags: Java
 keywords: 
 description: 

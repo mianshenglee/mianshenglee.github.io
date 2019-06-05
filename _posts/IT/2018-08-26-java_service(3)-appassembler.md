@@ -1,7 +1,7 @@
 ---
 layout: post
 title: java服务安装(三)：使用appassembler
-category: 技术
+category: IT
 tags: Java
 keywords: 
 description: 

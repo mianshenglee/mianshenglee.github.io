@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 《如何阅读一本书》读书笔记
-category: 读书
+category: study
 tags: book
 keywords: 阅读
 description: 介绍了如何系统地，更好地阅读一本书，从而提升自己的理解能力，提高心智，增加智慧。

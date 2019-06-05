@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 《深入浅出Spring Boot 2.x》读书笔记
-category: 读书
+category: study
 tags: book
 keywords: springboot
 description: 讲述如何使用Spring Boot 2.x进行编程开发的技术书籍。

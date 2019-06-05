@@ -1,7 +1,7 @@
 ---
 layout: post
 title: 数据批处理神器-Spring Batch(1)简介及使用场景
-category: 技术
+category: IT
 tags: SpringBatch
 keywords: 
 description: 
