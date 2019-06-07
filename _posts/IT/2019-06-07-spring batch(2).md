@@ -12,7 +12,7 @@ description:
 tags： springbatch
 
 ---
-[TOC]
+
 
 # 1.引言
 前面[《数据批处理神器-Spring Batch(1)简介及使用场景》][1]已经介绍了`Spring Batch`是一个轻量级，完善的批处理框架，它使用起来简单，方便，比较适合有点编程基础（特别是使用Spring及SpringBoot框架）的开发人员，针对业务编程，只需要关心具体的业务实现即可，把流程以及流程的控制交给`Spring Batch`就好。常言道"`talk is cheap, show me the code`"，下面我们就通过一个简单的`hello world`，进入`Spring Batch`的世界，通过这个示例，可以快速了解开发批处理的流程和`Spring Batch`开发用到的组件，为后续的操作打下基础。
