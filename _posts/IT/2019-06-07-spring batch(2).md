@@ -1,3 +1,12 @@
+---
+layout: post
+title: 快速了解组件-spring batch(2)之helloworld
+category: IT
+tags: SpringBatch
+keywords: 
+description: 
+---
+
 # 快速了解组件-spring batch(2)之helloworld
 
 tags： springbatch
