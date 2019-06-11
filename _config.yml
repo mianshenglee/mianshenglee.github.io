@@ -34,8 +34,9 @@ active: IT
 
 # 首页除了最新文章外显示分类
 cates: 
-  - Travel
   - Java
+  - SpringBatch
+  - book
 
 # 中文本地化
 locals:
