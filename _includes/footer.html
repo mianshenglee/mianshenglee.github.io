@@ -26,6 +26,7 @@
 		var pathName=window.document.location.pathname;
 		if(pathName!="" && pathName.substr(0, 3) == "/20"){
 			$(".list-group-item-lay[href='"+pathName+"']").addClass("active").siblings().removeClass("active");	
+			$(".list-group-item-lay[href='"+pathName+"']").parents(".tab-pane").addClass("active").siblings().removeClass("active");	
 		}
 		
 		$(".pjaxlink").click(function(){
