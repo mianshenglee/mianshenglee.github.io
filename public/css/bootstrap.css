@@ -5379,6 +5379,7 @@ a.list-group-item-lay:hover, a.list-group-item-lay:focus {
 
 a.list-group-item-lay {
     color: #fff;
+	cursor: pointer;
 }
 
 .list-group-item:first-child {
