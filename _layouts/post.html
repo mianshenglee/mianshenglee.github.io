@@ -29,7 +29,8 @@ layout: base
 <script src="https://billts.site/js/gitment.js"></script>
 <script>
 var gitment = new Gitment({
-    id: 'location.href.match(/.*\/([^\.]*?)\.html/)[1]',
+    id: location.href.match(/.*\/([^\.]*?)\.html/)[1],
+	title: location.href.match(/.*\/([^\.]*?)\.html/)[1],
     owner: 'mianshenglee',
     repo: 'mianshenglee.github.io',
     oauth: {
