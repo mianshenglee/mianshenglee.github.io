@@ -24,7 +24,10 @@
 	
 	$(document).ready(function(){
 		$(".list-group-item-lay.pjaxlink").click(function(){
+			//修改激活状态显示
 			$(this).addClass("active").siblings().removeClass("active");
+			//刷新页面
+			window.location.href = window.location.href;
 		})
 	});
 </script>
