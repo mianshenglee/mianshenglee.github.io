@@ -54,4 +54,11 @@ var gitment = new Gitment({
 });
 gitment.render('gitmentContainer');
 
+$(document).ready(function(){
+    $(".list-group-item-lay.pjaxlink").click(function(){
+		$(this).addClass("active").siblings().removeClass("active");
+	})
+});
+
+
 </script>
