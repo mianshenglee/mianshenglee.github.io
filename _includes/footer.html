@@ -23,7 +23,12 @@
     $('a[href="#{{ site.active }}"]').tab('show');
 	
 	$(document).ready(function(){
-		$(".list-group-item-lay.pjaxlink").click(function(){
+		var pathName=window.document.location.pathname;
+		if(pathName!="" && pathName.substr(0, 2) == "20"){
+			$(".list-group-item-lay[href='"+pathName+"']").addClass("active").siblings().removeClass("active");	
+		}
+		
+		$(".pjaxlink").click(function(){
 			var targetHref = $(this).attr("href");
 			var pathName=window.document.location.pathname;
 			if(targetHref != pathName){
@@ -31,7 +36,7 @@
 				window.location.href = targetHref;
 			}
 			//修改激活状态显示
-			$(this).addClass("active").siblings().removeClass("active");
+			//$(this).addClass("active").siblings().removeClass("active");
 		})
 	});
 </script>
