@@ -29,7 +29,7 @@
 			var tabPane = $(".list-group-item-lay[href='"+pathName+"']").parents(".tab-pane");
 			var id = tabPane.attr("id");
 			tabPane.addClass("active").siblings().removeClass("active");
-			$("[href='#"+id+"']").addClass("active").siblings().removeClass("active");
+			$("[href='#"+id+"']").parent().addClass("active").siblings().removeClass("active");
 		}
 		
 		$(".pjaxlink").click(function(){
