@@ -54,4 +54,9 @@ var gitment = new Gitment({
     },
 });
 gitment.render('gitmentContainer');
+
+window.onhashchange = function(event){
+	console.log(window.location)
+	location.reload();
+}
 </script>
