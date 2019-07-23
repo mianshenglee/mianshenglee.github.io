@@ -26,8 +26,13 @@
 		$(".list-group-item-lay.pjaxlink").click(function(){
 			//修改激活状态显示
 			$(this).addClass("active").siblings().removeClass("active");
-			//刷新页面
-			window.location.href = window.location.href;
+			var targetHref = $(this).attr("href");
+			var pathName=window.document.location.pathname;
+			if(targetHref != pathName){
+				//刷新页面
+				window.location.href = targetHref;
+			}
+			
 		})
 	});
 </script>
