@@ -13,8 +13,6 @@ tags: springbatch mongodb
 
 ---
 
-[TOC]
-
 # 1.引言
 
 之前对Spring Batch的通过实例的方式进行了介绍，有兴趣的可见以下文章：
@@ -27,7 +25,7 @@ tags: springbatch mongodb
 - [增量同步-spring batch(6)动态参数绑定与增量同步][6]
 - [调度与监控-spring batch(7)结合xxl-job进行批处理][7]
 
-除了文件及关系型数据库的数据同步，Spring Batch的读组件(`ItemReader`)，处理组件(`ItemProcessor`)，写组件(`ItemWriter`)支持丰富的数据类型，其中`MongoItemReader`及`MongoItemWriter`是针对mongo的读写组件，用户可以直接使用，进行`Mongodb`的数据读写操作。一种比较常用的情景是从关系型数据库（如`mysql`）把数据同步到`mongodb`中，下面通过实例对`mysql`到`mongodb`的数据同步进行讲解。本文主要讲解有关`Mongodb`的操作，对于`Spring Batch`使用`beetlsql`进行关系数据库数据读取的操作请见文章《[便捷的数据读写-spring batch(5)结合beetlSql进行数据读写][5]》。本文的示例代码见[github示例创建][8]。
+除了文件及关系型数据库的数据同步，Spring Batch的读组件(`ItemReader`)，处理组件(`ItemProcessor`)，写组件(`ItemWriter`)支持丰富的数据类型，其中`MongoItemReader`及`MongoItemWriter`是针对mongo的读写组件，用户可以直接使用，进行`Mongodb`的数据读写操作。一种比较常用的情景是从关系型数据库（如`mysql`）把数据同步到`mongodb`中，下面通过实例对`mysql`到`mongodb`的数据同步进行讲解。本文主要讲解有关`Mongodb`的操作，对于`Spring Batch`使用`beetlsql`进行关系数据库数据读取的操作请见文章《[便捷的数据读写-spring batch(5)结合beetlSql进行数据读写][5]》。本文的示例代码见[github示例仓库][8]。
 
 # 2.开发环境
 
