@@ -7,8 +7,6 @@ keywords:
 description: 
 ---
 
-# mongo同步-spring batch(8)的mongo读写组件使用
-
 tags: springbatch mongodb
 
 ---
