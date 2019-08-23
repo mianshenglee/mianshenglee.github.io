@@ -11,7 +11,6 @@ tags: java, troubleshooting, monitor
 
 ---
 
-[TOC]
 
 > 一句话概括：java应用监测，为什么？监测什么？如何监测？本文为你解答。
 
