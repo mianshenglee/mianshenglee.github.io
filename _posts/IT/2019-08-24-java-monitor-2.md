@@ -20,7 +20,7 @@ tags: java, troubleshooting, monitor
 
 # 2 java应用启动
 
-启动java应用使用的是java(class文件)或java -jar(jar或war包)命令，java命令其实就是生成一个JVM的实例，java应用则运行于此JVM实例中，JVM负责类加载，运行时区域堆栈分配等工作，当应用退出，JVM实例也会关闭。启动多个java应用，也会启动多个JVM实例，它们不会相互影响(但它们都共享同一系统的资源)，这也是为什么使用一个JDK，可以跑多个java应用的背后逻辑。使用java命令启动应用所使用的参数，基本是用于JVM的，JVM实例通过调用某个初始类的main()方法来运行一个Java程序，此方法将作为该程序初始线程的起点，任何其他的线程都是由这个初始线程启动的。在JVM内部有两种线程：守护线程（如垃圾回收线程）和非守护线程（`main`方法线程及用户使用`Thread`创建的线程），当该程序中所有的非守护线程都终止时，JVM实例将自动退出。
+启动java应用使用的是`java`(class文件)或`java -jar`(jar或war包)命令，java命令其实就是生成一个JVM的实例，java应用则运行于此JVM实例中，JVM负责类加载，运行时区域堆栈分配等工作，当应用退出，JVM实例也会关闭。启动多个java应用，也会启动多个JVM实例，它们不会相互影响(但它们都共享同一系统的资源)，这也是为什么使用一个JDK，可以跑多个java应用的背后逻辑。使用java命令启动应用所使用的参数，基本是用于JVM的，JVM实例通过调用某个初始类的main()方法来运行一个Java程序，此方法将作为该程序初始线程的起点，任何其他的线程都是由这个初始线程启动的。在JVM内部有两种线程：守护线程（如垃圾回收线程）和非守护线程（`main`方法线程及用户使用`Thread`创建的线程），当该程序中所有的非守护线程都终止时，JVM实例将自动退出。
 
 # 3 java应用启动参数说明
 
@@ -203,7 +203,7 @@ java命令究竟有哪些参数可以用，这些参数分别有什么作用，�
 简单的java启动命令，使用起来原来这么复杂，当然一般来说，只使用`java`或`java -jar`来按默认值启动应用，也不会有太大问题。只是涉及到调优、监测、诊断时，了解这些参数，无疑是高级程序员必要的技能。希望通过本文，大家对`java`命令及参数可以做到心中有数。
 
 # 参考资料
-- JDK工具参考文档：`https://docs.oracle.com/javase/8/docs/technotes/tools/unix/`
+- [JDK工具参考文档](https://docs.oracle.com/javase/8/docs/technotes/tools/unix)：`https://docs.oracle.com/javase/8/docs/technotes/tools/unix/`
 
 # 相关阅读
 
