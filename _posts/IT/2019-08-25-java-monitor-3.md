@@ -11,7 +11,6 @@ tags: java, troubleshooting, monitor,jvm
 
 ---
 
-[TOC]
 
 > 一句话概括：原来jdk自带的命令行工具如此好用，本文将详细介绍。
 
