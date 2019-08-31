@@ -34,7 +34,7 @@ active: IT
 
 # 首页除了最新文章外显示分类
 cates: 
-  - Java
+  - java
   - SpringBatch
   - book
 
