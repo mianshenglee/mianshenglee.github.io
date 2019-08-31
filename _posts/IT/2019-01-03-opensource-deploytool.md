@@ -2,7 +2,7 @@
 layout: post
 title: 部署工具(deploy-tool)开源
 category: IT
-tags: Java
+tags: java
 keywords: 
 description: 
 ---
