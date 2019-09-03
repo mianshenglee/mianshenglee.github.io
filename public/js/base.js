@@ -60,7 +60,13 @@ $(document).ready(function() {
   
   //添加关于奖赏按钮显示
   $("#likeit").on('click',function(){
-	  $("#likeit-img").show();
+	  var $likeitImg = $("#likeit-img");
+	  if(likeitImg.is(':hidden')){
+		  $("#likeit-img").show();
+	  }else{
+		  $("#likeit-img").hide();
+	  }
+	  
   });
 
   $(document).pjax('.pjaxlink', '#pjax', { fragment: "#pjax", timeout: 10000 });
