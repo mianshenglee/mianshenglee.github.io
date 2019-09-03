@@ -57,6 +57,11 @@ $(document).ready(function() {
     $(this).data('clicked',!isClicked);
 
   });
+  
+  //添加关于奖赏按钮显示
+  $("#likeit").on('click',function(){
+	  $("#likeit-img").show();
+  });
 
   $(document).pjax('.pjaxlink', '#pjax', { fragment: "#pjax", timeout: 10000 });
   $(document).on("pjax:end", function() {
