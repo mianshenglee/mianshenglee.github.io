@@ -61,10 +61,10 @@ $(document).ready(function() {
   //添加关于奖赏按钮显示
   $("#likeit").on('click',function(){
 	  var $likeitImg = $("#likeit-img");
-	  if(likeitImg.is(':hidden')){
-		  $("#likeit-img").show();
+	  if($likeitImg.is(':hidden')){
+		  $likeitImg.show();
 	  }else{
-		  $("#likeit-img").hide();
+		  $likeitImg.hide();
 	  }
 	  
   });
