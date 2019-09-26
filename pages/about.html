@@ -38,3 +38,23 @@ titlename: 关于
   <i class="fa fa-envelope-o fa-lg" style="color:#16a095;"></i>
 </a>
 <hr>
+
+<div id="gitmentContainer"></div>
+<!--<link rel="stylesheet" href="https://imsun.github.io/gitment/style/default.css">-->
+<link rel="stylesheet" href="https://billts.site/extra_css/gitment.css">
+<!--<script src="https://imsun.github.io/gitment/dist/gitment.browser.js"></script>-->
+<script src="https://billts.site/js/gitment.js"></script>
+
+<script>
+var gitment = new Gitment({
+    id: location.href.match(/.*\/([^\.]*?)\.html/)[1],
+	title: location.href.match(/.*\/([^\.]*?)\.html/)[1],
+    owner: 'mianshenglee',
+    repo: 'mianshenglee.github.io',
+    oauth: {
+        client_id: '8e782a3c9a72b06d5ddf',
+        client_secret: '564357e7721911e4eda4293e511795bf02028271',
+    },
+});
+gitment.render('gitmentContainer');
+</script>
