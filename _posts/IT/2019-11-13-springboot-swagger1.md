@@ -636,13 +636,13 @@ List<SecurityReference> defaultAuth() {
 
 [swagger官网]( https://swagger.io/ ): ` https://swagger.io/ `
 
-[springfox官网]( http://springfox.github.io/springfox/ ): ` http://springfox.github.io/springfox/ `
+[springfox官网]( http://springfox.github.io/springfox/ ): `http://springfox.github.io/springfox/`
 
-[在 Spring Boot 项目中使用 Swagger 文档](https://www.ibm.com/developerworks/cn/java/j-using-swagger-in-a-spring-boot-project/index.html )：` https://www.ibm.com/developerworks/cn/java/j-using-swagger-in-a-spring-boot-project/index.html `
+[在 Spring Boot 项目中使用 Swagger 文档](https://www.ibm.com/developerworks/cn/java/j-using-swagger-in-a-spring-boot-project/index.html )：`https://www.ibm.com/developerworks/cn/java/j-using-swagger-in-a-spring-boot-project/index.html`
 
-[SpringBoot2 配置swagger2并统一加入认证参数]( https://www.jianshu.com/p/7a24d202b395 )：` https://www.jianshu.com/p/7a24d202b395 `
+[SpringBoot2 配置swagger2并统一加入认证参数]( https://www.jianshu.com/p/7a24d202b395 )：`https://www.jianshu.com/p/7a24d202b395`
 
-[一篇文章带你搞懂 Swagger 与 SpringBoot 整合]( https://mp.weixin.qq.com/s/1KuBFfMugJ4pf3cSEFfXfw ): ` https://mp.weixin.qq.com/s/1KuBFfMugJ4pf3cSEFfXfw `
+[一篇文章带你搞懂 Swagger 与 SpringBoot 整合]( https://mp.weixin.qq.com/s/1KuBFfMugJ4pf3cSEFfXfw ): `https://mp.weixin.qq.com/s/1KuBFfMugJ4pf3cSEFfXfw`
 
 # 往期文章
 
