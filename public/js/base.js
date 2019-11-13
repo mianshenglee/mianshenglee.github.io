@@ -60,7 +60,7 @@ $(document).ready(function() {
   
   //添加关于奖赏按钮显示
   $("#likeit").on('click',function(){
-	  var $likeitImg = $(".likeit-img");
+	  var $likeitImg = $(".likeit-div");
 	  if($likeitImg.is(':hidden')){
 		  $likeitImg.show();
 	  }else{
