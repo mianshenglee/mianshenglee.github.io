@@ -444,7 +444,9 @@ easy-mock是使用项目来进行接口管理，可以创建个人项目，也�
 - [swagger2markup-maven-plugin]( https://github.com/Swagger2Markup/swagger2markup-maven-plugin )： ` https://github.com/Swagger2Markup/swagger2markup-maven-plugin `
 - [asciidoctor-maven-plugin]( https://asciidoctor.org/docs/asciidoctor-maven-plugin/ )：` https://asciidoctor.org/docs/asciidoctor-maven-plugin/ `
 - [asciidoctor-pdf中文字体]( https://github.com/chloerei/asciidoctor-pdf-cjk-kai_gen_gothic/releases ):` https://github.com/chloerei/asciidoctor-pdf-cjk-kai_gen_gothic/releases `
+- [使用Swagger2Markup、asciidoctor-maven-plugin和asciidoctorj-pdf插件生成PDF格式的API文档中文问题解决]( https://blog.csdn.net/lihuaijun/article/details/79727863 ):` https://blog.csdn.net/lihuaijun/article/details/79727863 `
 
 
-关注我的公众号，获取更多技术记录：
+**关注我的公众号，获取更多技术记录**：
+
 ![mason技术记录](https://gitee.com/mianshenglee/datastorage/raw/master/md-photo/myphoto/wx/wx-public.jpg)
