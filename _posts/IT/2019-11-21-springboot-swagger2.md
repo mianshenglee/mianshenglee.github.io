@@ -433,7 +433,7 @@ easy-mock是使用项目来进行接口管理，可以创建个人项目，也�
 
 # 5. 总结
 
-本篇文章针对接口过滤显示，前端mock数据和离线导出文档等问题，提供相应的解决方法，包括接口过滤（包过滤、类注解过滤、方法注解过滤、分组过滤等方式），实现按需发布指定接口的功能；使用easy-mock+swagger实现mock数据；使用maven插件实现接口文档的离线导出。希望对有需要的同学有所帮助。
+本篇文章针对接口过滤显示，前端mock数据和离线导出文档等问题，提供相应的解决方法，包括接口过滤（包过滤、类注解过滤、方法注解过滤、分组过滤等方式），实现按需发布指定接口的功能；使用easy-mock+swagger实现mock数据；使用maven插件实现接口文档的离线导出。希望对有需要的同学有所帮助。本文配套的[示例工程地址]( https://github.com/mianshenglee/my-example/tree/master/springboot-swagger-demo/advance-swagger-demo )：` https://github.com/mianshenglee/my-example/tree/master/springboot-swagger-demo/advance-swagger-demo `，读者可fork或pull下来，结合学习。
 
 # 相关阅读
 
