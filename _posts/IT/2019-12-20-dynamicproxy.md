@@ -337,11 +337,8 @@ public class LogAopAspect {
 # 参考资料
 
 - [动态代理](  https://zgljl2012.com/dong-tai-dai-li/ ): `https://zgljl2012.com/dong-tai-dai-li/`
-
 - [java动态代理](https://juejin.im/post/5ad3e6b36fb9a028ba1fee6a): `https://juejin.im/post/5ad3e6b36fb9a028ba1fee6a`
-
-- [计算机程序的思维逻辑 (86) - 动态代理]( https://juejin.im/post/591c5fe5a22b9d0058439333 )：` https://github.com/qos-ch/logback `
-
+- [计算机程序的思维逻辑 (86) - 动态代理]( https://juejin.im/post/591c5fe5a22b9d0058439333 )：`https://juejin.im/post/591c5fe5a22b9d0058439333`
 - [从源码入手，一文带你读懂Spring AOP面向切面编程]( https://juejin.im/post/5b9b1c8be51d450e9942fae4 )：` https://juejin.im/post/5b9b1c8be51d450e9942fae4 `
 
 
