@@ -290,7 +290,7 @@ public class TestUserController {
 
 本文对多个数据库的操作进行了初步探讨，并对使用多套源的策略进行讲解，结合主从代码示例，搭建了 Spring Boot + MyBatis Plus 工程，配置多数据源及使用 Mapper 进行多数据源操作，最后对多套数据源的优缺点进行总结。希望小伙伴们可以对多数据源操作有个初步印象。
 
-本文配套的示例，[示例代码](https://github.com/mianshenglee/my-example/tree/master/multi-datasource)，有兴趣的可以跑一下示例来感受一下。
+本文有配套的[示例代码](https://github.com/mianshenglee/my-example/tree/master/multi-datasource)，有兴趣的可以跑一下示例来感受一下。
 
 
 
