@@ -37,7 +37,7 @@ description:
 - 开发IDE: `IDEA`
 - 构建工具Maven: `3.3.9`
 - MySQL : `5.6.26`
-- [Lombok][3]: `1.18.10`
+- [Lombok](https://projectlombok.org): `1.18.10`
 
 
 
