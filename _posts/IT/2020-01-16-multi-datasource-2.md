@@ -102,7 +102,7 @@ public class DynamicDataSourceConfig {
 
 ### 3.2.1 动态数据源配置
 
-**（1） 添加jdbc依赖 **
+** （1） 添加jdbc依赖 **
 
 ```java
 <dependency>
@@ -113,7 +113,7 @@ public class DynamicDataSourceConfig {
 
 
 
-**（2） 添加动态数据源类 **
+** （2） 添加动态数据源类 **
 
 ``` java
 public class DynamicDataSource extends AbstractRoutingDataSource {
@@ -348,18 +348,18 @@ public List<TestUser> getSlaveUser(){ return testUserMapper.selectList(null); }
 
 ```java
 @GetMapping("/listall")
-    public Object listAll() {
-        int initSize = 2;
-        Map<String, Object> result = new HashMap<>(initSize);
-        //默认master数据源查询
-        List<TestUser> masterUser = testUserService.getMasterUser();
-        result.put(DataSourceConstants.DS_KEY_MASTER, masterUser);
-        //从slave数据源查询
-        List<TestUser> slaveUser = testUserService.getSlaveUser();
-        result.put(DataSourceConstants.DS_KEY_SLAVE, slaveUser);
-        //返回数据
-        return ResponseResult.success(result);
-    }
+public Object listAll() {
+	int initSize = 2;
+	Map<String, Object> result = new HashMap<>(initSize);
+	//默认master数据源查询
+	List<TestUser> masterUser = testUserService.getMasterUser();
+	result.put(DataSourceConstants.DS_KEY_MASTER, masterUser);
+	//从slave数据源查询
+	List<TestUser> slaveUser = testUserService.getSlaveUser();
+	result.put(DataSourceConstants.DS_KEY_SLAVE, slaveUser);
+	//返回数据
+	return ResponseResult.success(result);
+}
 ```
 
 由此可见，已经把数据库切换的模板代码消除，只需要关注业务逻辑处理即可。这就是AOP的好处。
