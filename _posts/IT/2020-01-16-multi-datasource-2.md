@@ -162,7 +162,7 @@ public DataSource dynamicDataSource() {
 
 ### 3.2.2 动态选择数据源
 
-**（1） 数据源 key 的上下文 **
+**（1） 数据源 key 的上下文**
 
 前面固定写了一个数据源路由策略，总是返回 master，显然不是我们想要的。我们想要的是在需要的地方，想切换就切换。因此，需要有一个动态获取数据源 key 的地方（我们称为上下文），对于 web 应用，访问以线程为单位，使用 ThreadLocal 就比较合适，如下：
 
@@ -281,7 +281,7 @@ public @interface DS {
 </dependency>
 ```
 
-**（2） 定义切面 **
+**（2） 定义切面**
 
 ```java
 @Aspect
@@ -394,15 +394,10 @@ public Object listAll() {
 # 往期文章
 
 - [搞定SpringBoot多数据源(1)：多套源策略](https://mp.weixin.qq.com/s/0J-FLYScYtEMnj0vZToX7g)
-
 - [java开发必学知识:动态代理](https://mp.weixin.qq.com/s/a3x_pKUryb_at_4Xk48IiQ)
-
 - [2019 读过的好书推荐](https://mp.weixin.qq.com/s/Wlbjhohb_HrqT67lstwVwA)
-
 - [springboot+apache前后端分离部署https](https://mp.weixin.qq.com/s/hiJdsjdDC07axk-_sAkyVQ)
-
 - [springboot+logback 日志输出企业实践（下）](https://mp.weixin.qq.com/s/ha4LaR-E1gDxfUZ11neI-Q)
-
 - [springboot+logback 日志输出企业实践（上）]( https://mp.weixin.qq.com/s/Ti5i9vv9S1j4za5q11RWeA )
 
   
