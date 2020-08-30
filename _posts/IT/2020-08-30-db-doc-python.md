@@ -282,7 +282,7 @@ def set_file_format(self, file_path):
 
 当生成数据库说明文档后，调用此函数，即可修改其文档格式，效果如下：
 
-![1598756250234](C:\Users\Administrator\AppData\Roaming\Typora\typora-user-images\1598756250234.png)
+![带格式的数据库说明文档](https://gitee.com/mianshenglee/datastorage/raw/master/md-photo/20200830-python/db-excel.png)
 
 ## 7 总结
 
