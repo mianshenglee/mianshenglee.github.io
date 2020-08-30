@@ -41,7 +41,7 @@ SELECT * FROM all_COL_COMMENTS WHERE owner = %db_name%  and TABLE_NAME=%table_na
 
 实现方式也可以根据各人喜欢的编程语言来实现。在本文中，以 MySQL 为例，使用 python 编程实现，把数据信息输出到 excel 文档（具体 excel 操作，可参考我上一篇文章《[ Python 处理 Excel 文件](https://mp.weixin.qq.com/s/GAoOOXebxshW1fGCLJc8BQ)》）。输出效果如下所示：
 
-![数据库说明文档](https://gitee.com/mianshenglee/datastorage/raw/master/md-photo/20200830-python/db-excel.png)
+![带格式的数据库说明文档](https://gitee.com/mianshenglee/datastorage/raw/master/md-photo/20200830-python/db-excel.png)
 
 下面就跟着我进行实现吧。
 
