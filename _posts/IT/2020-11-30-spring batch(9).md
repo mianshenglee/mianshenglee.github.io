@@ -36,6 +36,7 @@ description:
 - 日志组件logback:1.2.3
 - lombok:1.18.6
 - MySQL: 5.6.26
+- Mybatis-plus: 3.4.0
 
 本示例源码已放至[github](https://github.com/mianshenglee/spring-batch-example/tree/master/spring-batch-param)：`https://github.com/mianshenglee/spring-batch-example/tree/master/spring-batch-param`，请结合示例代码进行阅读。
 
